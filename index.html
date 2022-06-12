@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./header/React.css">
+</head>
+
+<body>
+    <div class="main">
+        <Header class="start">
+            <a class="logoa" href="">
+                <!-- <div class="logo"> -->
+                <img id="react-logo" src="./header/logo.svg" alt="">
+                <!-- </div> -->
+                <a class="react" href="">React</a>
+            </a>
+
+            <div class="extra">
+                <a id="documents"href="https://reactjs.org/docs/getting-started.html">Docs</a>
+                <a href="">Tutorial</a>
+                <a href="">Blog</a>
+                <a href="">Community</a>
+            </div>
+            <div class="search">
+                <input type="text" class="in" placeholder="Search">
+            </div>
+            <div class="ending">
+                <a id="version" href="">v17.0.2</a>
+                <a href="" class="langs">
+                    <svg class xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"></path>
+                        <path
+                            d=" M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z "
+                            class="css-c4d79v"></path>
+                    </svg>
+                    <span>Lnaguages</span>
+                </a>
+                <a href="">Github</a>
+            </div>
+        </Header>
+        <div class="intro">
+
+            <h1 class="heading">React</h1>
+            <h2 class="subHeading">A javascript library for building beautiful user interfaces</h2>
+            <div class="butonWrap">
+
+                <button class="getStarted">Get started</button>
+                <a href="">Take the tutorial
+                    <svg height="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4.53657 8.69699" class="next">
+                        <path d="
+                                M.18254,8.697a.18149.18149,0,0,1-.12886-.31034L4.09723,4.34126.05369.29954a.18149.18149,
+                                0,0,1,.2559-.2559L4.4838,4.21785a.18149.18149,0,0,1,0,.2559L.30958,8.648A.18149.18149,
+                                0,0,1,.18254,8.697Z
+                                " fill="currentColor"></path>
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+        <div class="aboutReact">
+            <div class="subHead subHead1">
+                <h3>Declarative</h3>
+                <p>React makes it painless to create interactive UIs. Design simple views for each state in your
+                    application, and React will efficiently update and render just the right components when your data
+                    changes.
+                    </br>
+                    </br>
+                    Declarative views make your code more predictable and easier to debug.</p>
+            </div>
+            <div class="subHead subHead2">
+                <h3>Component-Based
+                </h3>
+                <p>Build encapsulated components that manage their own state, then compose them to make complex UIs.
+                    <br />
+                    <br />
+                    Since component logic is written in JavaScript instead of templates, you can easily pass rich data
+                    through your app and keep state out of the DOM.
+                </p>
+            </div>
+            <div class="subHead subHead3">
+                <h3>Learn Once, Write Anywhere
+                </h3>
+                <p>We don’t make assumptions about the rest of your technology stack, so you can develop new features in
+                    React without rewriting existing code.
+                    <br />
+                    <br />
+                    React can also render on the server using Node and power mobile apps using React Native.
+                </p>
+            </div>
+        </div>
+        <hr>
+        <div class="ReactFeatures">
+            <div class="aboutJsx component">
+                <div class="reactComponentInfo" style="color: black;">
+                    <h1>A simple component</h1>
+                    <p>
+                        React components implement a <highlight>render()</highlight> method that takes input data and
+                        returns what to display.
+                        This
+                        example uses an XML-like syntax called JSX. Input data that is passed into the component can be
+                        accessed
+                        by <highlight> render()</highlight> via <highlight>this.props.</highlight>
+                        <br />
+                        <br />
+                        <strong>JSX is optional and not required to use React.</strong>
+                        Try the Babel REPL to see the raw JavaScript code produced by the JSX compilation step.
+                    </p>
+                </div>
+                <div class="image_component">
+                    <img src="./Header/React_component.png" alt="">
+                </div>
+            </div>
+            <div class="aboutJsx state">
+                <div class="reactComponentInfo" style="color: black;">
+                    <h1>A Stateful Component</h1>
+                    <p>
+                        In addition to taking input data (accessed via <highlight> this.props</highlight>), a component
+                        can maintain internal
+                        state
+                        data (accessed via <highlight> this.state</highlight>). When a component’s state data changes,
+                        the rendered markup will
+                        be
+                        updated by re-invoking <highlight> this.render()</highlight>
+                    </p>
+                </div>
+                <div class="image_component">
+                    <img src="./Header/Screenshot 2022-06-10 160458.png" alt="">
+                </div>
+            </div>
+            <div class="aboutJsx compInfo">
+                <div class="reactComponentInfo" style="color: black;">
+                    <h1>An Application
+
+                    </h1>
+                    <p>
+                        Using <highlight> props</highlight> and <highlight>state</highlight>, we can put together a
+                        small Todo application.
+                        This example uses <highlight>state</highlight> to
+                        track the
+                        current list of items as well as the text that the user has entered. Although event handlers
+                        appear
+                        to be
+                        rendered inline, they will be collected and implemented using event delegation </p>
+                </div>
+                <div class="image_component">
+                    <img src="./Header/an_apllication_example.png" alt="">
+                </div>
+            </div>
+            <div class="aboutJsx state">
+                <div class="reactComponentInfo" style="color: black;">
+                    <h1>A Component Using External Plugins
+                    </h1>
+                    <p>
+                        React allows you to interface with other libraries and frameworks. This example uses remarkable,
+                        an
+                        external
+                        Markdown library, to convert <textarea>  text area value in real time.</textarea> </p>
+                </div>
+                <div class="image_component">
+                    <img src="./Header/external_plugins.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="startReact">
+            <a href="https://reactjs.org/docs/getting-started.html">
+                <button class="getstarted">
+                    Get started
+                </button>
+            </a>
+            <div id="tutorialPLace">
+                <a id="takeTutorial" href="https://reactjs.org/tutorial/tutorial.html" target="_blank"
+                    rel="noopener noreferrer">
+                    Take the Tutorial
+                    <svg height="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4.53657 8.69699" class="next">
+                        <path d="
+                                M.18254,8.697a.18149.18149,0,0,1-.12886-.31034L4.09723,4.34126.05369.29954a.18149.18149,
+                                0,0,1,.2559-.2559L4.4838,4.21785a.18149.18149,0,0,1,0,.2559L.30958,8.648A.18149.18149,
+                                0,0,1,.18254,8.697Z
+                                " fill="currentColor"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <footer>
+            <div class="footer">
+                <div class="copyRight">
+                    <img src="./Header/copyright.png" alt="">
+                    <p>Copyright © 2022 Meta Platforms, Inc.</p>
+                </div>
+                <div class="moreWrapper ">
+                    <div class="docs commonFooterSelector">
+                        <div class="doc">DOCS</div>
+                        <a href="https://reactjs.org/docs/getting-started.html" target="_blank"
+                            rel="noopener noreferrer">Installation</a>
+                        <a href="https://reactjs.org/docs/hello-world.html" target="_blank"
+                            rel="noopener noreferrer">MainConcepts</a>
+                        <a href="https://reactjs.org/docs/accessibility.html" target="_blank"
+                            rel="noopener noreferrer">AdvancedGuides</a>
+                        <a href="https://reactjs.org/docs/react-api.html" target="_blank"
+                            rel="noopener noreferrer">APIReference</a>
+                        <a href="https://reactjs.org/docs/hooks-intro.html" target="_blank"
+                            rel="noopener noreferrer">Hooks</a>
+                        <a href="https://reactjs.org/docs/testing.html" target="_blank"
+                            rel="noopener noreferrer">Testing</a>
+                        <a href="https://reactjs.org/docs/how-to-contribute.html" target="_blank"
+                            rel="noopener noreferrer">Contributing</a>
+                        <a href="https://reactjs.org/docs/faq-ajax.html" target="_blank"
+                            rel="noopener noreferrer">FAQ</a>
+                    </div>
+                    <div class="channels commonFooterSelector">
+                        <div class="channels">CHANNELS</div>
+                        <a href="https://github.com/facebook/react" target="_blank" rel="noopener noreferrer">Github</a>
+                        <a href="https://stackoverflow.com/questions/tagged/reactjs" target="_blank"
+                            rel="noopener noreferrer">Stack Overflow</a>
+                        <a href="https://reactjs.org/community/support.html#popular-discussion-forums" target="_blank"
+                            rel="noopener noreferrer">Discussion Forms</a>
+                        <a href="https://discord.com/invite/reactiflux" target="_blank"
+                            rel="noopener noreferrer">Reactiflux
+                            Chat</a>
+                        <a href="https://dev.to/t/react" target="_blank" rel="noopener noreferrer">DEV Community</a>
+                        <a href="https://www.facebook.com/react" target="_blank" rel="noopener noreferrer">Facebook</a>
+                        <a href="https://twitter.com/reactjs" target="_blank" rel="noopener noreferrer">Twitter</a>
+                    </div>
+                    <div class="community commonFooterSelector">
+                        <div class="community">COMMUNITY</div>
+                        <a href="https://github.com/facebook/react/blob/main/CODE_OF_CONDUCT.md target=" target="_blank"
+                            rel="noopener noreferrer">Code Of Conduct</a>
+                        <a href="https://reactjs.org/community/support.html" target="_blank"
+                            rel="noopener noreferrer">Community Resources</a>
+                    </div>
+                    <div class="More commonFooterSelector">
+                        <div class="more">MORE</div>
+                        <a href="https://reactjs.org/tutorial/tutorial.html" target="_blank"
+                            rel="noopener noreferrer">Tutorial</a>
+                        <a href="https://reactjs.org/blog/2022/03/29/react-v18.html" target="_blank"
+                            rel="noopener noreferrer">Blog</a>
+                        <a href="https://reactjs.org/acknowledgements.html/" target="_blank"
+                            rel="noopener noreferrer">Acknowledgements</a>
+                        <a href="https://reactnative.dev/" target="_blank" rel="noopener noreferrer">React Native</a>
+                        <a href="https://opensource.fb.com/legal/privacy/" target="_blank"
+                            rel="noopener noreferrer">privacy</a>
+                        <a href="https://opensource.fb.com/legal/terms/" target="_blank"
+                            rel="noopener noreferrer">Terms</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
