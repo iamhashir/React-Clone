@@ -304,6 +304,12 @@ input[type=text]:focus {
   }
 }
 
+@media (max-width: 685px) {
+  .langs svg {
+    display: none;
+  }
+}
+
 .ending > a:hover {
   color: #61dafb;
 }
@@ -386,6 +392,7 @@ input[type=text]:focus {
 @media (max-width: 769px) and (max-height: 1025px) {
   .getStarted {
     margin-bottom: 5rem;
+    font-weight: 500;
   }
 }
 
@@ -865,7 +872,7 @@ a {
   padding: 1rem;
   margin: 0;
   margin-top: 1.5rem;
-  font-weight: 100;
+  font-weight: 400;
   font-size: 1.2rem;
 }
 
@@ -1012,5 +1019,6 @@ button:hover {
 
 highlight {
   background: #f8e0ff;
+  color: black;
 }
-/*# sourceMappingURL=React.css.map */
+/*# sourceMappingURL=react_styles.css.map */
