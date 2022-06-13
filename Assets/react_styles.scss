@@ -2,22 +2,25 @@ $react-color: #61dafb;
 $background-Getstarted:#282c34;
 $background-footer:#20232a;
 
+// this mixin is used to center our content
 @mixin flex_center {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+// this mixin is used to style buttons
 @mixin buttonStyling {
     .getstarted {
         background-color: #61dafb;
         border: 0;
         padding: 1rem;
+        // rem unit is used to set content according to the default styling of the browser 
         margin: 0;
         margin-top: 1.5rem;
         font-weight: 400;
 
-        @include above-desktop-devices {
+        @include Standard-resolution-devices {
             margin-top: .5rem;
             padding: .5rem;
             font-weight: 400;
@@ -27,35 +30,39 @@ $background-footer:#20232a;
     }
 }
 
-@mixin above-desktop-devices {
-    @media (max-width:475px) and (max-height:480px) {
-        @content;
-    }
-}
-
-@mixin above-desktop-devices {
+// this mixin is used to set our content responsive for mobile screens 
+@mixin Standard-resolution-devices {
     @media (max-width:475px) and (max-height:510px) {
         @content;
     }
 }
 
+// this media query is used to adjust styles for headers on smaller widths   
 @mixin standard-header-mobiles {
     @media (max-width:685px) {
         @content;
     }
 }
-
-@mixin Heigh_adjust {
-    @media (max-width:613px) and (max-height:813px) {
+// this media query is used to optimize tablet devices result
+@mixin tablet_devices {
+    @media (max-width:769px)and (max-height:1025px) {
         @content
     }
 }
 
+// this media query is used to adjust header for different heights
+@mixin Height-adjust {
+    @media (max-width:613px) and (max-height:900px) {
+        @content
+    }
+}
+//  this media query is used to adjust header for different heights
 @mixin width_adjust {
     @media (min-width:600px) and (max-width:900px) {
         @content
     }
 }
+//  this media query is used to adjust header for different heights
 
 @mixin header_adjust {
     @media (min-width:770px) and (max-width:1060px) {
@@ -63,79 +70,57 @@ $background-footer:#20232a;
     }
 }
 
-@mixin tablet_devices {
-    @media (max-width:769px)and (max-height:1025px) {
-        @content
-    }
-}
-
 .main {
-    @include above-desktop-devices {
+    // main is the main wrapper div of our whole page
+    @include Standard-resolution-devices {
         background: rgba(0, 0, 0, 0.461);
         width: 100vw;
         overflow: hidden;
     }
 }
-
 * {
+    // *selector is used to select everything in our page
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     font-weight: 300;
-    // overflow: hidden;
+
 }
 
 // **********************************Header start*********************************
-.main {
-    width: 100vw;
-}
+ 
 
-.start {
+.mainHeader {
+    // main header is the content wrapper of our header 
     background: #20232a;
     width: 100vw;
     height: 10vh;
+    
+    // content is aligned using flex box
     display: flex;
     justify-content: space-around;
     align-items: center;
+    // position fixed is used so that our header always sticks to the top
     position: fixed;
     top: 0;
     z-index: 1000;
 }
-
-.in {
-    background: transparent;
-    border: none;
-    color: white;
-    padding: 6px;
-
-    @include tablet_devices {
-        width: 100%;
-    }
-
-    @include standard-header-mobiles {
-        width: 0vw;
-    }
-
-    @include header-adjust {
-        width: 100%;
-    }
-}
-
 .search {
+    // search is the search wrapper for our searchbox 
     @include tablet_devices {
-        width: 10vw;
+        width: 20%;
     }
-
+    // header is adjusted for different output screens
     @include header-adjust {
         width: 10vw;
-
+        
     }
 }
-
 input[type=text],
 input[type=text]:focus {
+    // different behaviours are aadjusted of our search box
     font-size: 17px;
     color: black;
-    background-image: url(./search.svg);
+    background-image: url(./images/search.svg);
     color: #ffffff;
     background-repeat: no-repeat;
     background-size: 16px 16px;
@@ -146,37 +131,57 @@ input[type=text]:focus {
     font-weight: 300;
 }
 
-.in:focus {
+.searchHolder:focus {
     background: #373940;
     outline: none;
     border-radius: 4px;
 }
 
-.start a {
+.searchHolder {
+    // search holder is the input search box itself
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 6px;
+    
+    @include tablet_devices {
+        width: 100%;
+    }
+    // different looks on multiple devices are adjusted here
+    @include standard-header-mobiles {
+        width: 50%;
+    }
+    
+    @include header-adjust {
+        width: 100%;
+    }
+}
+
+.mainHeader a {
     text-decoration: none;
     color: white;
     font-size: 1.1rem;
 }
 
-.extra {
+.nav-links {
     width: 30%;
     height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+// nav links are the first part of our nav links    
     @include standard-header-mobiles {
         width: 45%;
-        overflow: scroll;
     }
-
+    
     @include tablet_devices {
+        overflow-x: scroll;
         width: 45%;
-        overflow: scroll;
     }
 }
 
-.extra a {
+.nav-links a {
+    // nav links a means taget all anchor tags inside nav links class
     @include standard-header-mobiles {
         width: 20%;
         font-size: .7rem;
@@ -185,27 +190,17 @@ input[type=text]:focus {
         font-size: .7rem;
         margin-left: 2rem;
     }
-
+    
 }
 
 #documents {
+    // documents is the docs part in our header
     @include standard-header-mobiles {
         margin-left: 1rem;
     }
 }
-
-.logoa>img {
-    width: 4vw;
-    height: 3.5vh;
-
-    @include standard-header-mobiles {
-        width: 8vw;
-        height: 8vh;
-    }
-}
-
-
-.logoa {
+.React_logo {
+    // react logo is the main wrapper
     display: flex;
     justify-content: center;
     width: 3%;
@@ -217,12 +212,25 @@ input[type=text]:focus {
     @include header_adjust {
         width: 10%;
         justify-content: flex-start;
-        // background: #000;
 
     }
 }
+.React_logo>img {
+    // targets the image in our logo
+    width: 4vw;
+    height: 3.5vh;
+    
+    @include standard-header-mobiles {
+        width: 8vw;
+        height: 8vh;
+    }
+}
+
+
+
 
 .react {
+    // .react is the logo text itself
     justify-self: flex-start;
     margin-left: -55px;
     font-weight: 300;
@@ -230,7 +238,7 @@ input[type=text]:focus {
     font-size: 1.4rem;
     font-weight: 350;
     letter-spacing: 1px;
-
+    
     @include tablet_devices {
         display: none;
     }
@@ -242,46 +250,50 @@ input[type=text]:focus {
 
 
 .react:hover {
+    // here different appearence are aplied
     color: #61dafb;
 }
-
-.ending {
+// ending links part targets the ending nav links of our header
+.ending-links {
     font-weight: 350;
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 22%;
     margin-top: .5rem;
-
+    
     @include standard-header-mobiles {
         width: 40%;
-        overflow: scroll;
+        // overflow-x: scroll;
     }
-
+    
     @include tablet_devices {
         // margin-top: 0;
         height: 100%;
         width: 25%;
     }
-
+    
     @include header_adjust {
         width: 25%;
         height: 100%;
-        overflow: scroll;
+        // overflow-x: hidden;
     }
 }
 
-.ending a {
+.ending-links a {
     @include standard-header-mobiles {
         width: 1%;
         font-size: .8rem;
         margin-left: 1.5rem;
     }
-
+    
     @include tablet_devices {
         width: 52%;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        align-self: center;
     }
-
+    
     @include header_adjust {
         width: 22%;
     }
@@ -296,26 +308,29 @@ input[type=text]:focus {
 
     @include tablet_devices {
         margin-left: 6.5rem;
+        display: none;
     }
-
+    
     @include header_adjust {
+        // display: none;
         margin-left: 0rem;
     }
 }
-#ha {
-}
-.langs {
+
+.language_svg {
     width: 43%;
     display: flex;
     justify-content: space-around;
     color: white;
     fill: currentcolor;
-
+    
     @include tablet_devices {
         margin-right: 1rem;
+        display: none;
     }
     
     @include header_adjust {
+        display: none;
         margin-right: 0rem;
     }
     
@@ -328,7 +343,7 @@ input[type=text]:focus {
     }
 }
 
-.ending>a:hover {
+.ending-links>a:hover {
     color: #61dafb;
 }
 
@@ -343,18 +358,43 @@ input[type=text]:focus {
 
 // **********************************Header End*******************************************
 // ************************************* React intro*************************************
+.intro {
+// intro section is the main wrapper of our intro section
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #282c34;
+    height: 80vh;
+    font-size: 2rem;
+    position: relative;
+    z-index: 100;
+    
+    @include Standard-resolution-devices {
+        height: 100vh;
+        padding: 12px;
+    }
+
+    @include Height-adjust {
+        height: 65vh;
+    }
+
+    @include tablet_devices {
+        height: 55%;
+    }
+}
 
 .heading {
+    // heading part targets the introduction section of our body
     color: rgb(97, 218, 251);
     margin: 0;
     margin-top: 7rem;
     font-size: 5rem;
-
-    @include above-desktop-devices {
+// different settings are adjusted here for multiple screens
+    @include Standard-resolution-devices {
         margin-top: 5rem;
     }
 
-    @include Heigh_adjust {
+    @include Height-adjust {
         margin-top: 5rem;
     }
 
@@ -365,6 +405,7 @@ input[type=text]:focus {
 }
 
 .subHeading {
+    // subheading section is the subheading for our intro part
     color: #ffffff;
     margin: 0;
     font-size: 2rem;
@@ -372,12 +413,12 @@ input[type=text]:focus {
     margin-top: 5vw;
     text-align: center;
 
-    @include above-desktop-devices {
+    @include Standard-resolution-devices {
         text-align: center;
         font-size: 1.5rem;
     }
 
-    @include Heigh_adjust {
+    @include Height-adjust {
         text-align: center;
         font-size: 1.5rem;
 
@@ -386,18 +427,18 @@ input[type=text]:focus {
 }
 
 .getStarted {
+    // get started section is the button of our intro section
     background-color: #61dafb;
     border: 0;
     padding: 1rem;
     margin: 0;
     margin-top: 1%;
-    @include above-desktop-devices {
+    @include Standard-resolution-devices {
         font-weight: 400;
         padding: .7rem;
     }
 
     @include tablet_devices {
-        // margin-top: 3rem;
 
         margin-bottom: 5rem;
         font-weight: 500;
@@ -407,12 +448,14 @@ input[type=text]:focus {
     font-size: 1.2rem;
 }
 
+
 .next {
+    // .next section targets the next svg element of our take the tour part 
     color: #61dafb;
     width: 2vw;
     height: 2vh;
 
-    @include above-desktop-devices {
+    @include Standard-resolution-devices {
         margin-left: .3rem;
     }
 }
@@ -422,7 +465,7 @@ input[type=text]:focus {
 }
 
 .butonWrap>a {
-    @include above-desktop-devices {
+    @include Standard-resolution-devices {
         font-size: 1.23rem;
         font-family: dubai;
     }
@@ -430,40 +473,16 @@ input[type=text]:focus {
     font-size: 1.3rem;
     color: #61dafb;
 }
-
-.intro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #282c34;
-    height: 80vh;
-    font-size: 2rem;
-    position: relative;
-    z-index: 100;
-
-    @include above-desktop-devices {
-        height: 100vh;
-        padding: 12px;
-    }
-
-    @include Heigh_adjust {
-        height: 65vh;
-    }
-
-    @include tablet_devices {
-        height: 55%;
-    }
-}
-
-// ************************************* React intro Ending*************************************
+// ************************************* React intro ending-links*************************************
 // **************************************** about React************************************* 
+// about react wraps our intro section for react js content of our pages
 .aboutReact {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     padding: 5rem 0;
 
-    @include above-desktop-devices {
+    @include Standard-resolution-devices {
         width: 100%;
     }
 
@@ -473,16 +492,16 @@ input[type=text]:focus {
 }
 
 .subHead {
+    // subhead is the subheading of our components section
     width: 25vw;
-
-    @include above-desktop-devices {
+    @include Standard-resolution-devices {
         width: 100%;
         background: $background-Getstarted;
         color: white;
         padding: 1rem;
     }
 
-    @include Heigh_adjust {
+    @include Height-adjust {
         width: 100%;
         background: $background-Getstarted;
         color: white;
@@ -504,11 +523,12 @@ input[type=text]:focus {
 
 .subHead2,
 .subHead3 {
-    @include above-desktop-devices {
+    // different headings are targetted over here
+    @include Standard-resolution-devices {
         margin-top: 3rem;
     }
 
-    @include Heigh_adjust {
+    @include Height-adjust {
         margin-top: 3rem;
     }
 
@@ -520,11 +540,11 @@ input[type=text]:focus {
 .subHead>h3 {
     font-weight: 300;
 
-    @include Heigh_adjust {
+    @include Height-adjust {
         margin-bottom: 1rem;
     }
 
-    @include above-desktop-devices {
+    @include Standard-resolution-devices {
         margin-bottom: 1rem;
     }
 
@@ -534,11 +554,11 @@ input[type=text]:focus {
 }
 
 .subHead>p {
-    @include above-desktop-devices {
+    @include Standard-resolution-devices {
         font-weight: 360;
     }
 
-    @include Heigh_adjust {
+    @include Height-adjust {
         font-weight: 360;
 
     }
@@ -552,18 +572,19 @@ input[type=text]:focus {
 
 // *************************************Features start*************************************
 .aboutJsx {
+    // react features part are the main section of our page it includes the detailed features of reactjs
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
     margin-top: 3rem;
 
-    @include above-desktop-devices {
+    @include Standard-resolution-devices {
         margin-top: 0;
         flex-direction: column;
         flex-wrap: wrap;
     }
 
-    @include Heigh_adjust {
+    @include Height-adjust {
         margin-top: 0;
         flex-direction: column;
         flex-wrap: wrap;
@@ -577,7 +598,8 @@ input[type=text]:focus {
 }
 
 .reactComponentInfo {
-    @include above-desktop-devices {
+    // react component info is a little introduction of react js
+    @include Standard-resolution-devices {
         flex-direction: column;
         flex-wrap: wrap;
         width: 100%;
@@ -585,7 +607,7 @@ input[type=text]:focus {
         padding-bottom: 2rem;
     }
 
-    @include Heigh_adjust {
+    @include Height-adjust {
         flex-direction: column;
         flex-wrap: wrap;
         width: 91.5%;
@@ -612,12 +634,12 @@ input[type=text]:focus {
 .reactComponentInfo>h1 {
     width: 100%;
 
-    @include above-desktop-devices {
+    @include Standard-resolution-devices {
         color: #fff;
         margin-top: 1rem;
     }
 
-    @include Heigh_adjust {
+    @include Height-adjust {
         color: #fff;
         margin-top: 1rem;
     }
@@ -629,11 +651,11 @@ input[type=text]:focus {
 }
 
 .state .image_component img {
-    @include above-desktop-devices {
+    @include Standard-resolution-devices {
         object-position: 0px 0px;
     }
 
-    @include Heigh_adjust {
+    @include Height-adjust {
         object-position: 0px 0px;
     }
 
@@ -643,7 +665,7 @@ input[type=text]:focus {
 }
 
 .image_component>img {
-    @include above-desktop-devices {
+    @include Standard-resolution-devices {
         width: 150vw;
         height: 100%;
         object-fit: cover;
@@ -651,7 +673,7 @@ input[type=text]:focus {
         border-radius: 0;
     }
 
-    @include Heigh_adjust {
+    @include Height-adjust {
         width: 150vw;
         height: 100%;
         object-fit: cover;
@@ -673,20 +695,20 @@ input[type=text]:focus {
 }
 
 textarea {
-    @include above-desktop-devices {
+    @include Standard-resolution-devices {
         display: none;
     }
 }
 
 .image_component {
-    @include above-desktop-devices {
+    @include Standard-resolution-devices {
         height: 100%;
         width: 100%;
         object-fit: cover;
         overflow: hidden;
     }
 
-    @include Heigh_adjust {
+    @include Height-adjust {
         height: 100%;
         width: 100%;
         object-fit: cover;
@@ -708,11 +730,11 @@ textarea {
 .ReactFeatures {
     padding: 2.5rem;
 
-    @include above-desktop-devices {
+    @include Standard-resolution-devices {
         padding: 1rem 0;
     }
 
-    @include Heigh_adjust {
+    @include Height-adjust {
         padding: 1rem 0;
     }
 
@@ -727,7 +749,7 @@ textarea {
     font-size: 1.1rem;
 }
 
-.startReact {
+.mainHeaderReact {
     @include flex_center;
     height: 20vh;
     background: $background-Getstarted;
@@ -738,7 +760,13 @@ a {
 }
 
 @include buttonStyling;
-
+.startReact{
+    background: $background-Getstarted;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
 #takeTutorial {
     padding: .1rem;
     color: $react-color;
@@ -746,7 +774,7 @@ a {
     font-family: dubai;
     font-size: 1.3rem;
 
-    @include above-desktop-devices {
+    @include Standard-resolution-devices {
         font-size: 1rem;
     }
 
@@ -758,7 +786,7 @@ a {
 #tutorialPLace {
     margin-top: 3.5rem;
 
-    @include above-desktop-devices {
+    @include Standard-resolution-devices {
         margin-bottom: 3.1rem;
     }
 
@@ -769,7 +797,7 @@ a {
 // *************************************Features END*************************************
 
 .moreWrapper a,
-.startReact a {
+.mainHeaderReact a {
     color: #fff;
     text-decoration: none;
     display: block;
@@ -778,11 +806,11 @@ a {
 .footer {
     display: flex;
 
-    @include above-desktop-devices {
+    @include Standard-resolution-devices {
         flex-direction: column;
     }
 
-    @include Heigh_adjust {
+    @include Height-adjust {
         flex-direction: column;
     }
 
@@ -823,11 +851,11 @@ a {
 .footer img {
     height: 7%;
 
-    @include above-desktop-devices {
+    @include Standard-resolution-devices {
         width: 70%;
     }
 
-    @include Heigh_adjust {
+    @include Height-adjust {
         width: 70%;
         height: 47%;
     }
@@ -856,3 +884,5 @@ highlight {
     background: #f8e0ff;
     color: black;
 }
+
+ 

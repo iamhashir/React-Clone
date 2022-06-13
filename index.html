@@ -6,32 +6,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./Header/react_styles.css">
+    <link rel="stylesheet" href="./Assets/react_styles.css">
 </head>
 
 <body>
     <div class="main">
-        <Header class="start">
-            <a class="logoa" href="">
-                <!-- <div class="logo"> -->
-                <img id="react-logo" src="./Header/logo.svg" alt="">
-                <!-- </div> -->
+        <!-- html is designed in such a way that the purpose of everything remain clear -->
+        <Header class="mainHeader">
+            <!-- mainHeader is a parent div which wraps everything in our header -->
+            <a class="React_logo" href="">
+                <!-- this div wraps the logoof our website which includes a svg and text -->
+                <img id="react-logo" src="./Assets/Images/logo.svg" alt="">
                 <a class="react" href="">React</a>
-            </a>
 
-            <div class="extra">
-                <a id="documents"href="https://reactjs.org/docs/getting-started.html">Docs</a>
-                <a href="">Tutorial</a>
-                <a href="">Blog</a>
-                <a href="">Community</a>
+            </a>
+            <div class="nav-links">
+                <!-- nav-links include first part of our nav bar links -->
+                <a id="documents" href="https://reactjs.org/docs/getting-started.html">Docs</a>
+                <a href="https://reactjs.org/tutorial/tutorial.html">Tutorial</a>
+                <a href="https://reactjs.org/blog/2022/03/29/react-v18.html">Blog</a>
+                <a href="https://reactjs.org/community/support.html">Community</a>
+                <!-- these all links refer to the orignal website content -->
             </div>
             <div class="search">
-                <input type="text" class="in" placeholder="Search">
+                <input type="text" class="searchHolder" placeholder="Search">
             </div>
-            <div class="ending">
+            <div class="ending-links">
+                <!-- this part wraps all ending nab links  -->
                 <a id="version" href="">v17.0.2</a>
-                <a href="" class="langs" >
-                    <svg class xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <a href="" class="language_svg">
+                    <svg class xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">6666
                         <path d="M0 0h24v24H0z" fill="none"></path>
                         <path
                             d=" M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z "
@@ -43,7 +47,6 @@
             </div>
         </Header>
         <div class="intro">
-
             <h1 class="heading">React</h1>
             <h2 class="subHeading">A javascript library for building beautiful user interfaces</h2>
             <div class="butonWrap">
@@ -111,7 +114,7 @@
                     </p>
                 </div>
                 <div class="image_component">
-                    <img src="./Header/React_component.png" alt="">
+                    <img src="./Assets/Images/React_component.png" alt="">
                 </div>
             </div>
             <div class="aboutJsx state">
@@ -128,7 +131,7 @@
                     </p>
                 </div>
                 <div class="image_component">
-                    <img src="./Header/Screenshot 2022-06-10 160458.png" alt="">
+                    <img src="./Assets/Images/Screenshot 2022-06-10 160458.png" alt="">
                 </div>
             </div>
             <div class="aboutJsx compInfo">
@@ -147,7 +150,7 @@
                         rendered inline, they will be collected and implemented using event delegation </p>
                 </div>
                 <div class="image_component">
-                    <img src="./Header/an_apllication_example.png" alt="">
+                    <img src="./Assets/Images/an_apllication_example.png" alt="">
                 </div>
             </div>
             <div class="aboutJsx state">
@@ -161,7 +164,7 @@
                         Markdown library, to convert <textarea>  text area value in real time.</textarea> </p>
                 </div>
                 <div class="image_component">
-                    <img src="./Header/external_plugins.png" alt="">
+                    <img src="./Assets/Images/external_plugins.png" alt="">
                 </div>
             </div>
         </div>
@@ -188,7 +191,7 @@
         <footer>
             <div class="footer">
                 <div class="copyRight">
-                    <img src="./Header/copyright.png" alt="">
+                    <img src="./Assets/Images/copyright.png" alt="">
                     <p>Copyright © 2022 Meta Platforms, Inc.</p>
                 </div>
                 <div class="moreWrapper ">

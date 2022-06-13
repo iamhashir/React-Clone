@@ -12,11 +12,7 @@
   font-weight: 300;
 }
 
-.main {
-  width: 100vw;
-}
-
-.start {
+.mainHeader {
   background: #20232a;
   width: 100vw;
   height: 10vh;
@@ -33,34 +29,9 @@
   z-index: 1000;
 }
 
-.in {
-  background: transparent;
-  border: none;
-  color: white;
-  padding: 6px;
-}
-
-@media (max-width: 769px) and (max-height: 1025px) {
-  .in {
-    width: 100%;
-  }
-}
-
-@media (max-width: 685px) {
-  .in {
-    width: 0vw;
-  }
-}
-
-@media (min-width: 770px) and (max-width: 1060px) {
-  .in {
-    width: 100%;
-  }
-}
-
 @media (max-width: 769px) and (max-height: 1025px) {
   .search {
-    width: 10vw;
+    width: 20%;
   }
 }
 
@@ -74,7 +45,7 @@ input[type=text],
 input[type=text]:focus {
   font-size: 17px;
   color: black;
-  background-image: url(./search.svg);
+  background-image: url(./images/search.svg);
   color: #ffffff;
   background-repeat: no-repeat;
   background-size: 16px 16px;
@@ -85,19 +56,44 @@ input[type=text]:focus {
   font-weight: 300;
 }
 
-.in:focus {
+.searchHolder:focus {
   background: #373940;
   outline: none;
   border-radius: 4px;
 }
 
-.start a {
+.searchHolder {
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 6px;
+}
+
+@media (max-width: 769px) and (max-height: 1025px) {
+  .searchHolder {
+    width: 100%;
+  }
+}
+
+@media (max-width: 685px) {
+  .searchHolder {
+    width: 50%;
+  }
+}
+
+@media (min-width: 770px) and (max-width: 1060px) {
+  .searchHolder {
+    width: 100%;
+  }
+}
+
+.mainHeader a {
   text-decoration: none;
   color: white;
   font-size: 1.1rem;
 }
 
-.extra {
+.nav-links {
   width: 30%;
   height: 100%;
   display: -webkit-box;
@@ -112,21 +108,20 @@ input[type=text]:focus {
 }
 
 @media (max-width: 685px) {
-  .extra {
+  .nav-links {
     width: 45%;
-    overflow: scroll;
   }
 }
 
 @media (max-width: 769px) and (max-height: 1025px) {
-  .extra {
+  .nav-links {
+    overflow-x: scroll;
     width: 45%;
-    overflow: scroll;
   }
 }
 
 @media (max-width: 685px) {
-  .extra a {
+  .nav-links a {
     width: 20%;
     font-size: .7rem;
     margin-left: 2rem;
@@ -142,19 +137,7 @@ input[type=text]:focus {
   }
 }
 
-.logoa > img {
-  width: 4vw;
-  height: 3.5vh;
-}
-
-@media (max-width: 685px) {
-  .logoa > img {
-    width: 8vw;
-    height: 8vh;
-  }
-}
-
-.logoa {
+.React_logo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -165,17 +148,29 @@ input[type=text]:focus {
 }
 
 @media (max-width: 685px) {
-  .logoa {
+  .React_logo {
     width: 13%;
   }
 }
 
 @media (min-width: 770px) and (max-width: 1060px) {
-  .logoa {
+  .React_logo {
     width: 10%;
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
+  }
+}
+
+.React_logo > img {
+  width: 4vw;
+  height: 3.5vh;
+}
+
+@media (max-width: 685px) {
+  .React_logo > img {
+    width: 8vw;
+    height: 8vh;
   }
 }
 
@@ -205,7 +200,7 @@ input[type=text]:focus {
   color: #61dafb;
 }
 
-.ending {
+.ending-links {
   font-weight: 350;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -220,29 +215,27 @@ input[type=text]:focus {
 }
 
 @media (max-width: 685px) {
-  .ending {
+  .ending-links {
     width: 40%;
-    overflow: scroll;
   }
 }
 
 @media (max-width: 769px) and (max-height: 1025px) {
-  .ending {
+  .ending-links {
     height: 100%;
     width: 25%;
   }
 }
 
 @media (min-width: 770px) and (max-width: 1060px) {
-  .ending {
+  .ending-links {
     width: 25%;
     height: 100%;
-    overflow: scroll;
   }
 }
 
 @media (max-width: 685px) {
-  .ending a {
+  .ending-links a {
     width: 1%;
     font-size: .8rem;
     margin-left: 1.5rem;
@@ -250,13 +243,18 @@ input[type=text]:focus {
 }
 
 @media (max-width: 769px) and (max-height: 1025px) {
-  .ending a {
+  .ending-links a {
     width: 52%;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
   }
 }
 
 @media (min-width: 770px) and (max-width: 1060px) {
-  .ending a {
+  .ending-links a {
     width: 22%;
   }
 }
@@ -272,6 +270,7 @@ input[type=text]:focus {
 @media (max-width: 769px) and (max-height: 1025px) {
   #version {
     margin-left: 6.5rem;
+    display: none;
   }
 }
 
@@ -281,7 +280,7 @@ input[type=text]:focus {
   }
 }
 
-.langs {
+.language_svg {
   width: 43%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -293,24 +292,26 @@ input[type=text]:focus {
 }
 
 @media (max-width: 769px) and (max-height: 1025px) {
-  .langs {
+  .language_svg {
     margin-right: 1rem;
+    display: none;
   }
 }
 
 @media (min-width: 770px) and (max-width: 1060px) {
-  .langs {
+  .language_svg {
+    display: none;
     margin-right: 0rem;
   }
 }
 
 @media (max-width: 685px) {
-  .langs svg {
+  .language_svg svg {
     display: none;
   }
 }
 
-.ending > a:hover {
+.ending-links > a:hover {
   color: #61dafb;
 }
 
@@ -322,6 +323,43 @@ input[type=text]:focus {
 .logo:hover {
   -webkit-transform: rotate(360deg);
           transform: rotate(360deg);
+}
+
+.intro {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #282c34;
+  height: 80vh;
+  font-size: 2rem;
+  position: relative;
+  z-index: 100;
+}
+
+@media (max-width: 475px) and (max-height: 510px) {
+  .intro {
+    height: 100vh;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 613px) and (max-height: 900px) {
+  .intro {
+    height: 65vh;
+  }
+}
+
+@media (max-width: 769px) and (max-height: 1025px) {
+  .intro {
+    height: 55%;
+  }
 }
 
 .heading {
@@ -337,7 +375,7 @@ input[type=text]:focus {
   }
 }
 
-@media (max-width: 613px) and (max-height: 813px) {
+@media (max-width: 613px) and (max-height: 900px) {
   .heading {
     margin-top: 5rem;
   }
@@ -365,7 +403,7 @@ input[type=text]:focus {
   }
 }
 
-@media (max-width: 613px) and (max-height: 813px) {
+@media (max-width: 613px) and (max-height: 900px) {
   .subHeading {
     text-align: center;
     font-size: 1.5rem;
@@ -424,43 +462,6 @@ input[type=text]:focus {
   }
 }
 
-.intro {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: #282c34;
-  height: 80vh;
-  font-size: 2rem;
-  position: relative;
-  z-index: 100;
-}
-
-@media (max-width: 475px) and (max-height: 510px) {
-  .intro {
-    height: 100vh;
-    padding: 12px;
-  }
-}
-
-@media (max-width: 613px) and (max-height: 813px) {
-  .intro {
-    height: 65vh;
-  }
-}
-
-@media (max-width: 769px) and (max-height: 1025px) {
-  .intro {
-    height: 55%;
-  }
-}
-
 .aboutReact {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -506,7 +507,7 @@ input[type=text]:focus {
   }
 }
 
-@media (max-width: 613px) and (max-height: 813px) {
+@media (max-width: 613px) and (max-height: 900px) {
   .subHead {
     width: 100%;
     background: #282c34;
@@ -531,7 +532,7 @@ input[type=text]:focus {
   }
 }
 
-@media (max-width: 613px) and (max-height: 813px) {
+@media (max-width: 613px) and (max-height: 900px) {
   .subHead2,
   .subHead3 {
     margin-top: 3rem;
@@ -549,7 +550,7 @@ input[type=text]:focus {
   font-weight: 300;
 }
 
-@media (max-width: 613px) and (max-height: 813px) {
+@media (max-width: 613px) and (max-height: 900px) {
   .subHead > h3 {
     margin-bottom: 1rem;
   }
@@ -577,7 +578,7 @@ input[type=text]:focus {
   }
 }
 
-@media (max-width: 613px) and (max-height: 813px) {
+@media (max-width: 613px) and (max-height: 900px) {
   .subHead > p {
     font-weight: 360;
   }
@@ -613,7 +614,7 @@ input[type=text]:focus {
   }
 }
 
-@media (max-width: 613px) and (max-height: 813px) {
+@media (max-width: 613px) and (max-height: 900px) {
   .aboutJsx {
     margin-top: 0;
     -webkit-box-orient: vertical;
@@ -655,7 +656,7 @@ input[type=text]:focus {
   }
 }
 
-@media (max-width: 613px) and (max-height: 813px) {
+@media (max-width: 613px) and (max-height: 900px) {
   .reactComponentInfo {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -700,7 +701,7 @@ input[type=text]:focus {
   }
 }
 
-@media (max-width: 613px) and (max-height: 813px) {
+@media (max-width: 613px) and (max-height: 900px) {
   .reactComponentInfo > p,
   .reactComponentInfo > h1 {
     color: #fff;
@@ -723,7 +724,7 @@ input[type=text]:focus {
   }
 }
 
-@media (max-width: 613px) and (max-height: 813px) {
+@media (max-width: 613px) and (max-height: 900px) {
   .state .image_component img {
     -o-object-position: 0px 0px;
        object-position: 0px 0px;
@@ -755,7 +756,7 @@ input[type=text]:focus {
   }
 }
 
-@media (max-width: 613px) and (max-height: 813px) {
+@media (max-width: 613px) and (max-height: 900px) {
   .image_component > img {
     width: 150vw;
     height: 100%;
@@ -801,7 +802,7 @@ input[type=text]:focus {
   }
 }
 
-@media (max-width: 613px) and (max-height: 813px) {
+@media (max-width: 613px) and (max-height: 900px) {
   .image_component {
     height: 100%;
     width: 100%;
@@ -830,7 +831,7 @@ input[type=text]:focus {
   }
 }
 
-@media (max-width: 613px) and (max-height: 813px) {
+@media (max-width: 613px) and (max-height: 900px) {
   .ReactFeatures {
     padding: 1rem 0;
   }
@@ -848,7 +849,7 @@ input[type=text]:focus {
   font-size: 1.1rem;
 }
 
-.startReact {
+.mainHeaderReact {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -884,6 +885,19 @@ a {
   }
 }
 
+.startReact {
+  background: #282c34;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 #takeTutorial {
   padding: .1rem;
   color: #61dafb;
@@ -915,7 +929,7 @@ a {
 }
 
 .moreWrapper a,
-.startReact a {
+.mainHeaderReact a {
   color: #fff;
   text-decoration: none;
   display: block;
@@ -942,7 +956,7 @@ a {
   }
 }
 
-@media (max-width: 613px) and (max-height: 813px) {
+@media (max-width: 613px) and (max-height: 900px) {
   .footer {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -993,7 +1007,7 @@ a {
   }
 }
 
-@media (max-width: 613px) and (max-height: 813px) {
+@media (max-width: 613px) and (max-height: 900px) {
   .footer img {
     width: 70%;
     height: 47%;
